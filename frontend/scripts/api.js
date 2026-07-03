@@ -1,10 +1,15 @@
 // ============================================
-// API CLIENT - Comunicación con el backend
+// API CLIENT - Comunicacion con el backend
 // ============================================
 
-const API_URL = 'http://localhost:5000/api';
+// Detectar entorno
+const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
 
-// Configuración base para fetch
+const API_URL = isProduction
+    ? 'https://backend-incidencias-caninas.onrender.com/api'
+    : 'http://localhost:5000/api';
+
+// Configuracion base para fetch
 const api = {
     // GET
     get: async (endpoint, token = null) => {
