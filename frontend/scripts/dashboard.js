@@ -166,20 +166,20 @@ const formatearFecha = (fecha) => {
     });
 };
 
-const mostrarAlerta = (mensaje, tipo = 'info') => {
-    // Función simple para mostrar alertas en el dashboard
-    const alertContainer = document.createElement('div');
-    alertContainer.className = `alert alert-${tipo} alert-dismissible fade show position-fixed top-0 end-0 m-3`;
-    alertContainer.style.zIndex = '9999';
-    alertContainer.style.minWidth = '300px';
-    alertContainer.innerHTML = `
-        ${mensaje}
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    `;
-    document.body.appendChild(alertContainer);
+// const mostrarAlerta = (mensaje, tipo = 'info') => {
+//     // Función simple para mostrar alertas en el dashboard
+//     const alertContainer = document.createElement('div');
+//     alertContainer.className = `alert alert-${tipo} alert-dismissible fade show position-fixed top-0 end-0 m-3`;
+//     alertContainer.style.zIndex = '9999';
+//     alertContainer.style.minWidth = '300px';
+//     alertContainer.innerHTML = `
+//         ${mensaje}
+//         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+//     `;
+//     document.body.appendChild(alertContainer);
 
-    setTimeout(() => {
-        alertContainer.classList.remove('show');
-        setTimeout(() => alertContainer.remove(), 300);
-    }, 5000);
-};
+//     setTimeout(() => {
+//         alertContainer.classList.remove('show');
+//         setTimeout(() => alertContainer.remove(), 300);
+//     }, 5000);
+// };
