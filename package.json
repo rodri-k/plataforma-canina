@@ -1,0 +1,24 @@
+{
+  "name": "plataforma-georreferenciada-incidencias-caninas",
+  "version": "1.0.0",
+  "description": "Prototipo funcional de plataforma georreferenciada para gestión de incidencias caninas",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "frontend": "cd frontend && python -m http.server 5500",
+    "setup": "npm install && cd backend && npm install"
+  },
+  "keywords": [
+    "georreferenciacion",
+    "incidencias",
+    "caninas",
+    "participacion",
+    "ciudadana"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

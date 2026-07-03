@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Incidencia - Operador</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="../../estilos/general.css">
+    <link rel="stylesheet" href="../../estilos/operador.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-geo-alt-fill me-2"></i>
+                Incidencias Caninas - Tarija
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard_operador.html">
+                            <i class="bi bi-house-fill me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="listado_incidencias.html">
+                            <i class="bi bi-list-ul me-1"></i>Incidencias
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mapa_operativo.html">
+                            <i class="bi bi-map me-1"></i>Mapa
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mapa_calor_operativo.html">Mapa de Calor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard_estadistico.html">
+                            <i class="bi bi-bar-chart-fill me-1"></i>Estadísticas
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle me-1"></i>
+                            <span id="nombreUsuario">Cargando...</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="perfil_operador.html"><i
+                                        class="bi bi-person me-2"></i>Perfil</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#" onclick="cerrarSesion()"><i
+                                        class="bi bi-box-arrow-right me-2"></i>Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid py-4">
+        <div id="contenidoPrincipal">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>
+                            <i class="bi bi-file-earmark-text me-2 text-primary"></i>
+                            Detalle de Incidencia
+                        </h2>
+                        <div>
+                            <a href="listado_incidencias.html" class="btn btn-outline-secondary me-2">
+                                <i class="bi bi-arrow-left me-2"></i>Volver
+                            </a>
+                            <a href="#" id="btnCambiarEstado" class="btn btn-warning">
+                                <i class="bi bi-pencil me-2"></i>Gestionar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h5 id="detalleCategoria" class="mb-1">Cargando...</h5>
+                                    <small class="text-muted">
+                                        <i class="bi bi-hash"></i>
+                                        Código: <span id="detalleCodigo">---</span>
+                                    </small>
+                                </div>
+                                <span id="detalleEstado" class="badge"
+                                    style="font-size: 1rem; padding: 0.5rem 1.5rem;">Cargando...</span>
+                            </div>
+                            <hr>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="text-muted small">Descripción</label>
+                                    <p id="detalleDescripcion" class="mb-0">Cargando...</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-muted small">Fecha de reporte</label>
+                                    <p id="detalleFecha" class="mb-0">---</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-muted small">Prioridad</label>
+                                    <p><span id="detallePrioridad" class="badge">---</span></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-muted small">Cantidad de perros</label>
+                                    <p id="detalleCantidad" class="mb-0">---</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-muted small">Barrio</label>
+                                    <p id="detalleBarrio" class="mb-0">---</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="text-muted small">Referencia</label>
+                                    <p id="detalleReferencia" class="mb-0">---</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="card shadow-sm mt-4">
+                        <div class="card-header bg-white">
+                            <h6 class="mb-0"><i class="bi bi-person me-2 text-primary"></i>Ciudadano que reportó</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="text-muted small">Nombre</label>
+                                    <p id="detalleCiudadano" class="mb-0">---</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="text-muted small">Email</label>
+                                    <p id="detalleEmail" class="mb-0">---</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="text-muted small">Teléfono</label>
+                                    <p id="detalleTelefono" class="mb-0">---</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="card shadow-sm mt-4">
+                        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0"><i class="bi bi-clock-history me-2 text-primary"></i>Seguimiento Municipal
+                            </h6>
+                            <a href="registrar_accion_municipal.html" id="btnRegistrarAccion"
+                                class="btn btn-sm btn-success">
+                                <i class="bi bi-plus-circle me-1"></i>Registrar Acción
+                            </a>
+                        </div>
+                        <div class="card-body" id="listaAcciones">
+                            <div class="text-center py-3 text-muted">
+                                <div class="spinner-border spinner-border-sm text-primary" role="status">
+                                    <span class="visually-hidden">Cargando...</span>
+                                </div>
+                                <p class="mt-2 mb-0">Cargando acciones...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white">
+                            <h6 class="mb-0"><i class="bi bi-image me-2 text-primary"></i>Evidencia</h6>
+                        </div>
+                        <div class="card-body" id="detalleImagen">
+                            <div class="text-center py-4 text-muted">
+                                <div class="spinner-border spinner-border-sm text-primary" role="status">
+                                    <span class="visually-hidden">Cargando...</span>
+                                </div>
+                                <p class="mt-2 mb-0">Cargando imagen...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm mt-4">
+                        <div class="card-header bg-white">
+                            <h6 class="mb-0"><i class="bi bi-geo-alt me-2 text-danger"></i>Ubicación</h6>
+                        </div>
+                        <div class="card-body p-0">
+                            <div id="mapaDetalle" style="height: 250px; border-radius: 0 0 0.5rem 0.5rem;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../../scripts/api.js"></script>
+    <script src="../../scripts/autenticacion.js"></script>
+    <script src="../../scripts/operador.js"></script>
+</body>
+
+</html>

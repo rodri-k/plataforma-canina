@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: backend-incidencias-caninas
+    runtime: node
+    repo: https://github.com/rodri-k/plataforma-canina
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: DATABASE_URL
+        sync: postgresql://admin:FSqUFLqAFak24dQdzRj2d8Q54N6PN94q@dpg-d93gvb7lk1mc73979970-a.oregon-postgres.render.com:5432/incidencias_caninas
+      - key: JWT_SECRET
+        sync: FSqUFLqAFak24dQdzRj2d8Q54N6PN94q
+      - key: FRONTEND_URL
+        sync: false
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start

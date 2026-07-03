@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Incidencias Caninas - Tarija</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="estilos/general.css">
+    <link rel="stylesheet" href="estilos/autenticacion.css">
+    <link rel="stylesheet" href="estilos/visitante.css">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-geo-alt-fill me-2"></i>
+                Incidencias Caninas - Tarija
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="paginas/visitante/iniciar_sesion.html">
+                            <i class="bi bi-box-arrow-in-right me-1"></i> Iniciar Sesión
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light text-primary px-3 ms-2"
+                            href="paginas/visitante/registrarse.html">
+                            <i class="bi bi-person-plus me-1"></i> Registrarse
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="container text-center py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="hero-icon mb-4">
+                        <i class="bi bi-heart-pulse-fill" style="font-size: 4rem; color: #2ECC71;"></i>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">
+                        Plataforma de Incidencias Caninas
+                    </h1>
+                    <p class="lead mb-4">
+                        Participa activamente en el monitoreo y atención de perros en situación de calle
+                        en la ciudad de Tarija. Reporta incidencias, da seguimiento y contribuye al
+                        bienestar animal.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="paginas/visitante/registrarse.html" class="btn btn-success btn-lg">
+                            <i class="bi bi-person-plus me-2"></i>Únete Ahora
+                        </a>
+                        <a href="paginas/visitante/mapa_publico.html" class="btn btn-outline-primary btn-lg">
+                            <i class="bi bi-map me-2"></i>Ver Mapa Público
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Características -->
+    <section class="features-section py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="card-body">
+                            <i class="bi bi-geo-alt-fill" style="font-size: 2.5rem; color: #3498DB;"></i>
+                            <h5 class="card-title mt-3">Georreferenciación</h5>
+                            <p class="card-text">Reporta incidencias con ubicación exacta en el mapa de Tarija.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="card-body">
+                            <i class="bi bi-clock-history" style="font-size: 2.5rem; color: #E67E22;"></i>
+                            <h5 class="card-title mt-3">Seguimiento</h5>
+                            <p class="card-text">Consulta el estado de tus reportes y el seguimiento municipal.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="card-body">
+                            <i class="bi bi-bar-chart-fill" style="font-size: 2.5rem; color: #9B59B6;"></i>
+                            <h5 class="card-title mt-3">Estadísticas</h5>
+                            <p class="card-text">Visualiza indicadores y análisis territorial de incidencias.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">
+                <i class="bi bi-buildings me-1"></i>
+                Gobierno Municipal de Tarija - Bienestar Animal
+            </p>
+            <small class="text-muted">© 2026 - Prototipo Funcional</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

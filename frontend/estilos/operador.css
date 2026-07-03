@@ -1,0 +1,159 @@
+/* ============================================
+   ESTILOS PARA OPERADOR MUNICIPAL
+   ============================================ */
+
+body {
+  background: #f0f2f5;
+  font-family: "Inter", "Roboto", sans-serif;
+}
+
+/* Tarjetas de estadísticas */
+.stat-card {
+  border: none;
+  border-radius: 1rem;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card .stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.stat-card.total .stat-icon {
+  background: rgba(52, 152, 219, 0.15);
+  color: #3498db;
+}
+
+.stat-card.pendiente .stat-icon {
+  background: rgba(241, 196, 15, 0.15);
+  color: #f1c40f;
+}
+
+.stat-card.revision .stat-icon {
+  background: rgba(52, 152, 219, 0.15);
+  color: #3498db;
+}
+
+.stat-card.curso .stat-icon {
+  background: rgba(231, 76, 60, 0.15);
+  color: #e74c3c;
+}
+
+.stat-card.cerrada .stat-icon {
+  background: rgba(46, 204, 113, 0.15);
+  color: #2ecc71;
+}
+
+.stat-card.critica .stat-icon {
+  background: rgba(231, 76, 60, 0.15);
+  color: #e74c3c;
+}
+
+/* Incidencias en listado */
+.incidencia-card {
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e9ecef;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  margin-bottom: 0.75rem;
+}
+
+.incidencia-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-color: #dee2e6;
+}
+
+.incidencia-card .incidencia-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.estado-badge {
+  font-size: 0.8rem;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* Filtros */
+.filtro-card {
+  border-radius: 0.75rem;
+  border: 1px solid #e9ecef;
+  background: #ffffff;
+  padding: 1.25rem;
+}
+
+/* Detalle */
+#detalleCategoria {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+#detalleEstado {
+  font-size: 0.85rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+}
+
+.accion-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.accion-item:last-child {
+  border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stat-card .stat-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+
+  .incidencia-card .row > div {
+    margin-bottom: 0.5rem;
+  }
+
+  .incidencia-card .row > div:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Animaciones */
+.fade-in {
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
